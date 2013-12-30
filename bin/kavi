@@ -1,0 +1,43 @@
+#!/bin/sh
+
+COMMAND_OR_NAME=$1
+if [ ! "$COMMAND_OR_NAME" ]; then
+  echo "usage: "
+  echo "    print edit file name list: $ kavi list "
+  echo "    edit sources   : $ kavi hoge "
+  echo "    edit file list : $ kavi hoge edit "
+  exit 1
+fi
+
+COMMAND=$2
+
+BASE_DIRECTORY=$HOME/work
+
+if [ ! -d "$BASE_DIRECTORY" ]; then
+  mkdir $BASE_DIRECTORY
+fi
+
+if [ "list" = $COMMAND_OR_NAME ]; then
+  ls -ltr $BASE_DIRECTORY/*.txt
+  exit
+fi
+
+FILE="${BASE_DIRECTORY}/${COMMAND_OR_NAME}.txt"
+if [ -f $FILE ]; then
+  echo "${FILE} is not exists."
+  exit 1
+fi
+
+if [ "edit" = "$COMMAND" ]; then
+  vi $FILE
+  exit
+fi
+
+if [ "cat" = "$COMMAND" ]; then
+  cat $FILE
+  exit
+fi
+
+vi `cat $FILE | grep -v "^#"`
+
+exit
