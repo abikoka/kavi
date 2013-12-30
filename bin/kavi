@@ -38,6 +38,11 @@ if [ "cat" = "$COMMAND" ]; then
   exit
 fi
 
+if [ "file" = "$COMMAND" ]; then
+  echo $FILE
+  exit
+fi
+
 vi `cat $FILE | grep -v "^#"`
 
 exit
