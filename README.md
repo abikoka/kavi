@@ -10,7 +10,7 @@ cd /path/to/git/cloning/direcotry
 git clone https://github.com/abikoka/kavi.git
 ```
 
-## Instring:
+## Installing:
 
 1. make bin directory in home directory.
 
