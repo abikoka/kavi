@@ -5,6 +5,13 @@ set smarttab
 set smartindent
 set autoindent
 
+set nocompatible
+set ai nu
+
+set undolevels=10000
+set undofile
+
+
 
 " centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
