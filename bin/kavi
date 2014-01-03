@@ -1,7 +1,7 @@
 #!/bin/sh
 
-COMMAND_OR_NAME=$1
-if [ ! "$COMMAND_OR_NAME" ]; then
+TICKETNO_OR_NAME_OR_COMMAND=$1
+if [ ! "$TICKETNO_OR_NAME_OR_COMMAND" ]; then
   echo "usage: "
   echo "    print edit file name list: $ kavi list "
   echo "    edit sources   : $ kavi hoge "
@@ -17,12 +17,12 @@ if [ ! -d "$BASE_DIRECTORY" ]; then
   mkdir $BASE_DIRECTORY
 fi
 
-if [ "list" = $COMMAND_OR_NAME ]; then
+if [ "list" = $TICKETNO_OR_NAME_OR_COMMAND ]; then
   ls -ltr $BASE_DIRECTORY/*.txt
   exit
 fi
 
-FILE="${BASE_DIRECTORY}/${COMMAND_OR_NAME}.txt"
+FILE="${BASE_DIRECTORY}/${TICKETNO_OR_NAME_OR_COMMAND}.txt"
 if [ "edit" = "$COMMAND" ]; then
   vi $FILE
   exit
@@ -46,3 +46,4 @@ fi
 vi `cat $FILE | grep -v "^#"`
 
 exit
+
