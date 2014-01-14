@@ -21,8 +21,10 @@ mk ~/bin
 2) set PATH environment.
 
 ```
-cat "export PATH=\$HOME/bin:$PATH" >> $HOME/.bashrc
-source $HOME/.bashrc
+echo "
+export PATH=\$HOME/bin:\$PATH
+" >> $HOME/.bash_profile
+source $HOME/.bash_profile
 ```
 
 3) copy or link kavi file in "~/bin" directory .
