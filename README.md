@@ -51,5 +51,5 @@ Copy that .vimrc file to home directory.
 5) mkdir .vim/backups and .vim/swaps directories.
 
 ```
-mkdir -p ~/.vim/backups ~/.vim/swaps
+mkdir -p ~/.vim/backups ~/.vim/swaps ~/work
 ```
