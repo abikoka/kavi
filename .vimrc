@@ -16,3 +16,5 @@ set undofile
 " centralize backups, swapfiles and undo history
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
+:syntax off
+
