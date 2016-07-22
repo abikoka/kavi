@@ -18,3 +18,5 @@ set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 :syntax off
 
+set undofile
+set undodir=~/.vim/undo
