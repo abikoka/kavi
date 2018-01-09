@@ -1,5 +1,12 @@
 #!/bin/sh
 
+#vimrc directory preparation
+if [ ! -d $HOME/.vim/swaps ]; then
+  mkdir -p $HOME/.vim/swaps
+  mkdir -p $HOME/.vim/undo
+  mkdir -p $HOME/.vim/backups
+fi
+
 TICKETNO_OR_NAME_OR_COMMAND=$1
 if [ ! "$TICKETNO_OR_NAME_OR_COMMAND" ]; then
   echo "usage: "
@@ -11,7 +18,9 @@ fi
 
 COMMAND=$2
 
-BASE_DIRECTORY=$HOME/work
+#BASE_DIRECTORY=$HOME/work
+BASE_DIRECTORY=$(dirname $0)"/../work"
+#BASE_DIRECTORY=/vendor/src/wasabi/tmp/kavi/work
 
 if [ ! -d "$BASE_DIRECTORY" ]; then
   mkdir $BASE_DIRECTORY
@@ -51,4 +60,3 @@ fi
 vi `cat $FILE | grep -v "^#"`
 
 exit
-
