@@ -5,6 +5,9 @@ set smarttab
 set smartindent
 set autoindent
 
+set encoding=utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp
+
 set nocompatible
 set ai nu
 
